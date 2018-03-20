@@ -5,4 +5,8 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="PostSharp" Version="5.0.48" />
+  </ItemGroup>
+
 </Project>
