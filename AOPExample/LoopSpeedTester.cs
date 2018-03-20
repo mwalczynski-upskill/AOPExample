@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace AOPExample
 {
-    public class LoopSpeedTester
+    public static class LoopSpeedTester
     {
-        public void StartTest(IList<int> testCollection)
+        public static void StartTest(IList<int> testCollection)
         {
             var numberOfElements = testCollection.Count;
 
@@ -26,7 +26,7 @@ namespace AOPExample
         }
 
         [ExecutionTimeCounter]
-        private void TestForLoop(IList<int> testCollection)
+        private static void TestForLoop(IList<int> testCollection)
         {
             var numberOfElements = testCollection.Count;
             for (var i = 0; i < numberOfElements; i++)
@@ -39,7 +39,7 @@ namespace AOPExample
         }
 
         [ExecutionTimeCounter]
-        private void TestForLoop2(IList<int> testCollection)
+        private static void TestForLoop2(IList<int> testCollection)
         {
             var numberOfElements = testCollection.Count;
             for (var i = 0; i < testCollection.Count; i++)
@@ -52,7 +52,7 @@ namespace AOPExample
         }
 
         [ExecutionTimeCounter]
-        private void TestForReversed(IList<int> testCollection)
+        private static void TestForReversed(IList<int> testCollection)
         {
             var numberOfElements = testCollection.Count;
             for (var i = numberOfElements; i > 0; i--)
@@ -65,7 +65,7 @@ namespace AOPExample
         }
 
         [ExecutionTimeCounter]
-        private void TestForEachLoop(IList<int> testCollection)
+        private static void TestForEachLoop(IList<int> testCollection)
         {
             var numberOfElements = testCollection.Count;
             foreach (var i in testCollection)
@@ -79,7 +79,7 @@ namespace AOPExample
 
 
         [ExecutionTimeCounter]
-        private void TestWhileLoop(IList<int> testCollection)
+        private static void TestWhileLoop(IList<int> testCollection)
         {
             var numberOfElements = testCollection.Count;
             var i = 0;

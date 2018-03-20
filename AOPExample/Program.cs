@@ -13,10 +13,9 @@ namespace AOPExample
             for (var i = 0; i < testLimit; i++)
                 testList.Add(i);
 
-            var loopSpeedTester = new LoopSpeedTester();
-            loopSpeedTester.StartTest(testList);
+            LoopSpeedTester.StartTest(testList);
 
-            Console.WriteLine("The end of tests");
+            Console.WriteLine("THE END");
             Console.ReadLine();
         }
     }

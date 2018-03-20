@@ -6,20 +6,19 @@ using PostSharp.Serialization;
 namespace AOPExample
 {
     [PSerializable]
-    [AttributeUsage(AttributeTargets.Method)]
     public class ExecutionTimeCounterAttribute : OnMethodBoundaryAspect
     {
-        private static readonly Stopwatch Timer = new Stopwatch();
+        private static readonly Stopwatch Stopwatch = new Stopwatch();
 
         public override void OnEntry(MethodExecutionArgs args)
         {
-            Timer.Start();
+            Stopwatch.Start();
         }
 
         public override void OnExit(MethodExecutionArgs args)
         {
-            var timeInMilliseconds = Timer.ElapsedMilliseconds;
-            Timer.Restart();
+            var timeInMilliseconds = Stopwatch.ElapsedMilliseconds;
+            Stopwatch.Reset();
             Console.WriteLine($"Execution lasted for {timeInMilliseconds} ms.\n");
         }
     }
